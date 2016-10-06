@@ -1,0 +1,96 @@
+//**** BootStrap 3 Breakpoint Mixins ****//
+
+@mixin bp-large {
+    // Large Devices, Wide Screens 
+    @media only screen and (min-width : 1200px) {
+    @content;
+  }
+}
+@mixin bp-medium {
+    // Medium Devices, Desktops 
+    @media only screen and (min-width : 992px) {
+    @content;
+  }
+}
+@mixin bp-small {
+    // Small Devices, Tablets
+    @media only screen and (min-width : 768px) {
+    @content;
+  }
+}
+@mixin bp-xs {
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : 480px) {
+    @content;
+  }
+}
+@mixin bp-xxs {
+    // Custom, iPhone Retina 
+    @media only screen and (min-width : 320px) {
+    @content;
+  }
+}
+//**** Useful Mixins?
+//Keyframe mixin that will auto include vendor prefixes
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }  
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }  
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+//animation mixin that will auto include vendor prefixes
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};      
+}
+//transition mixin that auto includes vendor prefixes
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+//opacity mixin for cross browser support
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+//class for screen-readers only
+//must be used with the @extend %visuallyhidden; syntax
+%visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+//clearfix class
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}

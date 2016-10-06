@@ -1,0 +1,14 @@
+.speech {
+    color:nth($orangeColors, 4);
+    background-color:invert(nth($orangeColors, 4));
+    width:800px;
+    margin:auto;
+    padding:10px;
+    & .extra{
+        display:none;
+        background-color:$hotpink;
+    }
+    & span {
+        background-color:$palegoldenrod;
+    }
+}

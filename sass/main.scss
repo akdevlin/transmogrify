@@ -1,0 +1,10 @@
+//@import 'compass';//install to your project dependencies prior
+@import 'variables';
+@import 'utilitymixins';
+@import 'mixins';
+@import 'layout';
+@import 'base';
+@import 'modules';
+//import sass partials
+//remember that the import order matters because this is a cascading style sheet
+//partials are custom scss files that are named _mixins.scss (note that you don't need to include the underscore o .scss in the import if you follow this naming convention)

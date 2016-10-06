@@ -1,0 +1,4 @@
+#This allows this file and the empty directory to be added to staging
+*
+*/
+!.gitignore
