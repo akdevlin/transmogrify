@@ -34,7 +34,11 @@ function createInputz(){
     var allGeneratedHTML = ``;
     for (var i = 0; i < spanAYnoDuplicates.length; i++){
         var inputHTMLspan = `<span>
-                    <input class="${$(spanAYnoDuplicates[i]).attr('class')}" id="${"ID" + $(spanAYnoDuplicates[i]).attr('class')}" type="text" placeholder="${$(spanAYnoDuplicates[i]).attr('data-hint')}"/><label for="${"ID" + $(spanAYnoDuplicates[i]).attr('class')}">${$(spanAYnoDuplicates[i]).attr('title')}</label>
+                    <input class="${$(spanAYnoDuplicates[i]).attr('class')}" 
+                    data-spanClass="${$(spanAYnoDuplicates[i]).attr('class')}"
+                    id="${"ID" + $(spanAYnoDuplicates[i]).attr('class')}" type="text" placeholder="${$(spanAYnoDuplicates[i]).attr('data-hint')}"/>
+                    <label 
+                        for="${"ID" + $(spanAYnoDuplicates[i]).attr('class')}">${$(spanAYnoDuplicates[i]).attr('title')}</label>
                   </span>`;
         var inputHTMldiv = `<div class="row">${inputHTMLspan}</div>`;
         allGeneratedHTML += `${inputHTMldiv}`;
