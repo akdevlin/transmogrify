@@ -1,4 +1,5 @@
 //Notes
+//turned off typescript compilation
 //This setup uses only one typescript file that is then compiled and turned into the main js file. For multiple .ts files or js concatenation, add the 'js-concat' task to the 'default' task
 
 
@@ -133,7 +134,7 @@ gulp.task('webserver', function() {
 //watches the sass and ts folder for changes. when changes occur, it runs the compiler task for their respective languages
 gulp.task('watcher', function() {
     //ts compiler task
-  gulp.watch(allTS, ['typescript']);
+  //gulp.watch(allTS, ['typescript']);
   gulp.watch(allSass, ['sass']);
 });
 
@@ -141,7 +142,7 @@ gulp.task('watcher', function() {
 gulp.task('compress', ['minify-css', 'minify-html']);
 
 //The 'default' task runs everytime you just run 'gulp' on the command line. It's good for having tasks execute when you are working on a project.
-gulp.task('default', ['watcher', 'sass', 'typescript', 'webserver']);
+gulp.task('default', ['watcher', 'sass', 'webserver']);
 
 
 
